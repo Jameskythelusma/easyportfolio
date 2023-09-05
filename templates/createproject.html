@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{%block content%}
+<h1>anrejistre projet</h1>
+<form action="" method="post" enctype="multipart/form-data">
+{% csrf_token %}
+    {{form.title.label}}
+    {{form.title}}<br><br>
+    {{form.description.label}}
+    {{form.description}}<br><br>
+    {{form.photo.label}}
+    {{form.photo}}<br><br>
+    {{form.category.label}}
+    {{form.category}}<br><br>
+    <input type="submit" value="anrejistre">
+</form>
+{%endblock%}

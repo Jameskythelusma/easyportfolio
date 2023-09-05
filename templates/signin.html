@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+
+{%block content%}
+<div class="container-fluid tm-container-content tm-mt-60">
+    <div class="row mb-4">
+        <h2 class="col-6 tm-text-primary">
+            signin
+        </h2>
+    </div>
+
+    <div>
+        <form action="" method="post">
+            {% csrf_token %}
+            <label for="user_name">user name</label>
+            <p>{{form.username}}</p>
+            <label for="password">password</label>
+            <p>{{form.password}}</p>
+            <button type="submit" class="">konekte</button>
+        </form>
+        ou pa gen kont? <a href="{% url 'signup' %}">kreye kont</a>
+    </div>
+</div>
+{%endblock%}

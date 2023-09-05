@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+
+{%block content%}
+  
+<div class="container-fluid tm-container-content tm-mt-60">
+    <img src="{{user_det.profile.photo.url}}" width="80px" alt="Image" class="img-fluid">
+   <h1>{{user_det.username}}</h1>
+   <span>emial : {{user_det.profile.email}} / Phone : {{user_det.profile.phone}}</span>
+   <p>{{user_det.profile.bio}}</p>
+   <hr>
+   {% for project in projects%}
+   <img src="{{project.photo.url}}" width="200px" alt="Image" class="img-fluid">
+   <h1>{{project.title}}</h1>
+    <a href="{% url 'projectdetails' project.id %}">Detay</a>
+    <hr>
+    {% empty %}
+    <li>No projects for this user.</li>
+   
+
+   {%endfor%}
+
+
+</div>
+{%endblock%}

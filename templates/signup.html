@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container-fluid tm-container-content tm-mt-60">
+    <div class="row mb-4">
+        <h2 class="col-6 tm-text-primary">
+            sign up
+        </h2>
+    </div>
+<form action="" method="post">
+    {% csrf_token %}
+    {{form.username.label}}
+    {{form.username}}<br><br>
+
+    {{form.password1.label}}
+    {{form.password1}}<br><br>
+    
+    {{form.password2.label}}
+    {{form.password2}}<br><br>
+
+   
+   
+    <button type="submit" class="">Anrejistre</button>
+    
+</form>
+{% endblock %}

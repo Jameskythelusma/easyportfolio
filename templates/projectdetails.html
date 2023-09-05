@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{%block content%}
+  
+<div class="container-fluid tm-container-content tm-mt-60">
+    
+   <hr>
+   {% for project in projects%}
+   <img src="{{project.photo.url}}" width="300px" alt="Image" class="img-fluid">
+   <h1>{{project.title}}</h1>
+   <span>{{project.created_date}}____category :{{project.category}}</span>
+    <span>{{project.categories.name}}</span>
+   <p>{{project.description}}</p>
+   
+   {% if user.is_authenticated %}
+   <p>
+     {% if user == project.user %}
+       <a href="{% url 'deleteproject' project.id %}">Delete Project</a> <br> </br>
+     {% endif %}
+   
+   </p>
+ {% endif %}
+   {%endfor%}
+
+
+</div>
+{%endblock%}
